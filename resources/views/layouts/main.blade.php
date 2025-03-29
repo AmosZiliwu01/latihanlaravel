@@ -94,10 +94,10 @@
 <!-- [ Sidebar Menu ] start -->
 <nav class="pc-sidebar">
     <div class="navbar-wrapper">
-        <div class="m-header">
-            <a href="../dashboard/index.html" class="b-brand text-primary">
+        <div class="m-header justify-content-center align-items-center">
+            <a href="{{route('dashboard.index')}}" class="b-brand text-primary">
                 <!-- ========   Change your logo from here   ============ -->
-                <img src="../assets/images/logo-white.svg" class="img-fluid logo-lg" alt="logo" />
+                <img src="{{asset('assets/images/my-logo.jpg')}}" style="width: 50px" alt="logo" />
             </a>
         </div>
         <div class="navbar-content">
@@ -106,124 +106,22 @@
                     <label>Navigation</label>
                 </li>
                 <li class="pc-item">
-                    <a href="../dashboard/index.html" class="pc-link">
-            <span class="pc-micon">
-              <i data-feather="home"></i>
-            </span>
-                        <span class="pc-mtext">Dashboard</span>
-                    </a>
-                </li>
-                <li class="pc-item pc-caption">
-                    <label>UI Components</label>
-                    <i data-feather="feather"></i>
-                </li>
-                <li class="pc-item">
-                    <a href="../elements/bc_color.html" class="pc-link">
-                        <span class="pc-micon"><i data-feather="droplet"></i></span>
-                        <span class="pc-mtext">Color</span>
+                    <a href="{{route('dashboard.index')}}" class="pc-link">
+                    <span class="pc-micon">
+                      <i data-feather="home"></i>
+                    </span>
+                    <span class="pc-mtext">Dashboard</span>
                     </a>
                 </li>
                 <li class="pc-item">
-                    <a href="../elements/bc_typography.html" class="pc-link">
-                        <span class="pc-micon"><i data-feather="type"></i></span>
-                        <span class="pc-mtext">Typography</span>
+                    <a href="{{route('category.index')}}" class="pc-link">
+                    <span class="pc-micon">
+                      <i data-feather="folder"></i>
+                    </span>
+                    <span class="pc-mtext">Category</span>
                     </a>
                 </li>
-                <li class="pc-item">
-                    <a href="../elements/icon-feather.html" class="pc-link">
-                        <span class="pc-micon"><i data-feather="feather"></i></span>
-                        <span class="pc-mtext">Icons</span>
-                    </a>
-                </li>
-                <li class="pc-item pc-caption">
-                    <label>Pages</label>
-                    <i data-feather="monitor"></i>
-                </li>
-                <li class="pc-item">
-                    <a href="../pages/login-v1.html" target="_blank" class="pc-link">
-                        <span class="pc-micon"><i data-feather="lock"></i></span>
-                        <span class="pc-mtext">Login</span>
-                    </a>
-                </li>
-                <li class="pc-item">
-                    <a href="../pages/register-v1.html" target="_blank" class="pc-link">
-                        <span class="pc-micon"><i data-feather="user-plus"></i></span>
-                        <span class="pc-mtext">Register</span>
-                    </a>
-                </li>
-                <li class="pc-item pc-caption">
-                    <label>Other</label>
-                    <i data-feather="sidebar"></i>
-                </li>
-                <li class="pc-item pc-hasmenu">
-                    <a href="#!" class="pc-link">
-            <span class="pc-micon">
-              <i data-feather="align-right"></i>
-            </span>
-                        <span class="pc-mtext">Menu levels</span><span class="pc-arrow"><i class="ti ti-chevron-right"></i></span>
-                    </a>
-                    <ul class="pc-submenu">
-                        <li class="pc-item"><a class="pc-link" href="#!">Level 2.1</a></li>
-                        <li class="pc-item pc-hasmenu">
-                            <a href="#!" class="pc-link"
-                            >Level 2.2<span class="pc-arrow"><i class="ti ti-chevron-right"></i></span
-                                ></a>
-                            <ul class="pc-submenu">
-                                <li class="pc-item"><a class="pc-link" href="#!">Level 3.1</a></li>
-                                <li class="pc-item"><a class="pc-link" href="#!">Level 3.2</a></li>
-                                <li class="pc-item pc-hasmenu">
-                                    <a href="#!" class="pc-link"
-                                    >Level 3.3<span class="pc-arrow"><i class="ti ti-chevron-right"></i></span
-                                        ></a>
-                                    <ul class="pc-submenu">
-                                        <li class="pc-item"><a class="pc-link" href="#!">Level 4.1</a></li>
-                                        <li class="pc-item"><a class="pc-link" href="#!">Level 4.2</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="pc-item pc-hasmenu">
-                            <a href="#!" class="pc-link"
-                            >Level 2.3<span class="pc-arrow"><i class="ti ti-chevron-right"></i></span
-                                ></a>
-                            <ul class="pc-submenu">
-                                <li class="pc-item"><a class="pc-link" href="#!">Level 3.1</a></li>
-                                <li class="pc-item"><a class="pc-link" href="#!">Level 3.2</a></li>
-                                <li class="pc-item pc-hasmenu">
-                                    <a href="#!" class="pc-link">
-                                        Level 3.3
-                                        <span class="pc-arrow"><i class="ti ti-chevron-right"></i></span>
-                                    </a>
-                                    <ul class="pc-submenu">
-                                        <li class="pc-item"><a class="pc-link" href="#!">Level 4.1</a></li>
-                                        <li class="pc-item"><a class="pc-link" href="#!">Level 4.2</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="pc-item">
-                    <a href="../other/sample-page.html" class="pc-link">
-                        <span class="pc-micon"><i data-feather="sidebar"></i></span>
-                        <span class="pc-mtext">Sample page</span>
-                    </a>
-                </li>
-
             </ul>
-            <div class="card pc-user-card my-3 bg-white bg-opacity-10">
-                <div class="card-body text-center">
-                    <img src="../assets/images/application/img-coupon.png" alt="img" class="img-fluid w-50" />
-                    <h5 class="mb-0 text-white mt-1">Datta Able</h5>
-                    <p class="text-white">Checkout pro features</p>
-                    <a href="https://codedthemes.com/item/datta-able-bootstrap-admin-template/" target="_blank" class="btn btn-warning">
-                        <svg class="pc-icon me-2">
-                            <use xlink:href="#custom-logout-1-outline"></use>
-                        </svg>
-                        Upgrade to Pro
-                    </a>
-                </div>
-            </div>
         </div>
     </div>
 </nav>
@@ -451,13 +349,13 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h5 class="mb-0">Home</h5>
+                            <h5 class="mb-0">@yield('title')</h5>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <ul class="breadcrumb mb-0">
-                            <li class="breadcrumb-item"><a href="../dashboard/index.html">Home</a></li>
-                            <li class="breadcrumb-item"><a href="javascript: void(0)">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0)">@yield('title')</a></li>
                             <li class="breadcrumb-item" aria-current="page">Home</li>
                         </ul>
                     </div>
@@ -503,7 +401,7 @@
 <script src="../assets/js/script.js"></script>
 <script src="../assets/js/theme.js"></script>
 <script src="../assets/js/plugins/feather.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
     layout_change('light');
@@ -528,7 +426,6 @@
 <script>
     layout_theme_sidebar_change('false');
 </script>
-
 
 </body>
 <!-- [Body] end -->
