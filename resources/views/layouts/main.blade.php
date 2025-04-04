@@ -121,6 +121,16 @@
                     <span class="pc-mtext">Category</span>
                     </a>
                 </li>
+                @can('admin')
+                <li class="pc-item">
+                    <a href="{{route('posts.index')}}" class="pc-link">
+                    <span class="pc-micon">
+                      <i data-feather="book"></i>
+                    </span>
+                    <span class="pc-mtext">Post</span>
+                    </a>
+                </li>
+                @endcan
             </ul>
         </div>
     </div>
