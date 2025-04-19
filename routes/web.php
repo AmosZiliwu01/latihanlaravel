@@ -7,6 +7,7 @@ use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FrontendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +20,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/',[FrontendController::class, 'home'])->name('home');
+Route::get('/about',[FrontendController::class, 'about'])->name('about');
 
 /*Login*/
 Route::get('/login', [AuthController::class, 'index'])->name('auth.index');
@@ -32,10 +33,13 @@ Route::get('/register', [AuthController::class, 'register'])->name('register.ind
 Route::post('/register', [AuthController::class, 'registerProcess'])->name('registerProcess.index');
 Route::get('/register/activation/{token}', [AuthController::class, 'registerVerify'])->name('register.activation');
 
-Route::group(['middleware' => 'auth:user'],function (){
-    Route::prefix('admin')->group(function () {
-        Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
+Route::group(['middleware' =>['auth'] ],function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+});
 
+/*Admin*/
+Route::group(['middleware' =>['auth','role:admin'] ],function (){
+    Route::prefix('dashboard')->group(function () {
         /*Category*/
         Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
         Route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');
@@ -49,6 +53,17 @@ Route::group(['middleware' => 'auth:user'],function (){
         Route::post('/posts/delete{id}', [PostController::class, 'delete'])->name('posts.delete');
     });
 });
+
+/*User*/
+Route::group(['middleware' => 'auth', 'role:user'], function () {
+    Route::prefix('dashboard')->group(function () {
+        Route::get('category', [\App\Http\Controllers\CategoryController::class, 'index'])->name('category.index');
+        Route::post('category/store', [\App\Http\Controllers\CategoryController::class, 'store'])->name('category.store');
+        Route::post('category/update{id}', [\App\Http\Controllers\CategoryController::class, 'update'])->name('category.update');
+        Route::post('category/delete{id}', [\App\Http\Controllers\CategoryController::class, 'delete'])->name('category.delete');
+    });
+});
+
 
 /*Route Storage*/
 Route::get('/storage/{folder}/{filename}', function ($folder, $filename) {

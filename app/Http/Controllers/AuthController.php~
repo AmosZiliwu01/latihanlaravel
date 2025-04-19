@@ -30,7 +30,6 @@ class AuthController extends Controller
                 Auth::guard('user')->logout();
                 return redirect()->route('auth.index')->with('pesan', 'Akun belum diaktivasi. Silakan cek email Anda untuk aktivasi akun.');
             }
-            Auth::login($user);
             return redirect()->intended('/dashboard');
         }else{
             return redirect(route('auth.index'))->with('pesan','Kombinasi email dan password salah');
